@@ -12,7 +12,7 @@
 
   handlers:
     - name: Restart Tomcat
-      systemd:
+      service:
         name: tomcat  # Modify to match your actual service name
         state: restarted
 
