@@ -7,7 +7,7 @@
     - name: Copy WAR File
       copy:
         src: /var/lib/jenkins/workspace/CICDAnsible/target/LoginWebApp-1.war
-        dest: /opt/apache-tomcat-9.0.80/webapps/LoginWebApp-1.war
+        dest: /opt/tomcat/webapps/LoginWebApp-1.war
       notify: Restart Tomcat
 
   handlers:
