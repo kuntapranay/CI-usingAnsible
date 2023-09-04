@@ -11,9 +11,8 @@
       notify: Restart Tomcat
 
   handlers:
-    - name: Restart Tomcat
-      service:
-        name: tomcat
+    - name: Restart the web container (e.g., Tomcat)
+      systemd:
+        name: tomcat  # Modify to match your actual service name
         state: restarted
-
 
