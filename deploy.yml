@@ -6,7 +6,7 @@
   tasks:
     - name: Copy WAR File
       copy:
-        src: /root/CI-usingAnsible/target/LoginWebApp-1.war
+        src: /var/lib/jenkins/workspace/CICDAnsible/target/LoginWebApp-1.war
         dest: /opt/apache-tomcat-9.0.80/webapps/LoginWebApp-1.war
       notify: Restart Tomcat
 
