@@ -1,0 +1,19 @@
+---
+- name: Deploy Java Application to Tomcat
+  hosts: tomcat-server
+  become: yes  # Use sudo to execute tasks
+
+  tasks:
+    - name: Copy WAR File
+      copy:
+        src: /root/CI-usingAnsible/target/LoginWebApp-1.war
+        dest: /opt/apache-tomcat-9.0.80/webapps/LoginWebApp-1.war
+      notify: Restart Tomcat
+
+  handlers:
+    - name: Restart Tomcat
+      service:
+        name: tomcat
+        state: restarted
+
+
